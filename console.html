@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console methods</title>
+  </head>
+  <body>
+    <h1>Console methods</h1>
+  </body>
+  <script>
+    console.group('This is a sample group')
+    console.error("This is an error message");
+    console.warn("This is a warning message");
+    // console.clear();
+    // console.time() and console.timeEnd() method
+    // console.time() method
+    console.time("Time Taken");
+    let time1 = function () {
+      console.log("time1 function is running");
+    };
+    let time2 = function () {
+      console.log("time2 function is running");
+    };
+    time1();
+    time2();
+    // console.timeEnd() method
+    console.timeEnd("Time Taken");
+    console.table({ a: 1, b: 2, c: 3, d: 4, e: 5 });
+    console.log("%c Custom message", "color:blue; font-size: 20px");
+    // console.count() method
+    console.log("This is a sample count");
+    for (let i = 0; i < 10; i++) {
+      console.count("This is iteration number", i);
+    }
+    console.groupEnd('This is a sample group')
+  </script>
+</html>
