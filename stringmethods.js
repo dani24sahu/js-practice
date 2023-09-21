@@ -200,3 +200,40 @@ console.log(str3.includes("nonexistent")); // false
 console.log(str3.includes("is a", 1)); // true
 console.log(str3.includes("IS A")); // false
 console.log(str3.includes("")); // true
+
+// String.prototype.indexOf()..........
+console.log("Blue Whale".indexOf("Blue")); // returns  0
+console.log("Blue Whale".indexOf("Blute")); // returns -1
+console.log("Blue Whale".indexOf("Whale", 0)); // returns  5
+console.log("Blue Whale".indexOf("Whale", 5)); // returns  5
+console.log("Blue Whale".indexOf("Whale", 7)); // returns -1
+console.log("Blue Whale".indexOf("")); // returns  0
+console.log("Blue Whale".indexOf("", 9)); // returns  9
+console.log("Blue Whale".indexOf("", 10)); // returns 10
+console.log("Blue Whale".indexOf("", 11)); // returns 10
+
+// String.prototype.lastIndexOf()..........
+console.log("umbrella".lastIndexOf("b")); // returns 2
+console.log("umbrella".lastIndexOf("b", 2)); // returns 2
+console.log("umbrella".lastIndexOf("r", 0)); // returns -1
+console.log("umbrella".lastIndexOf("x")); // returns -1
+console.log("umbrella".lastIndexOf("u", -5)); // returns 0
+console.log("umbrella".lastIndexOf("u", 0)); // returns 0
+console.log("umbrella".lastIndexOf("")); // returns 8
+console.log("umbrella".lastIndexOf("", 2)); // returns 2
+
+// String.prototype.localeCompare()..........
+// The localeCompare() method returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order.
+// The letter "a" is before "c" yielding a negative value
+console.log("a".localeCompare("c")); // -2 or -1 (or some other negative value)
+
+// Alphabetically the word "check" comes after "against" yielding a positive value
+console.log("check".localeCompare("against")); // 2 or 1 (or some other positive value)
+
+// "a" and "a" are equivalent yielding a neutral value of zero
+console.log("a".localeCompare("a")); // 0
+
+// Sort an array - localeCompare() enables case-insensitive sorting for an array.
+const items = ["réservé", "Premier", "Cliché", "communiqué", "café", "Adieu"];
+items.sort((a, b) => a.localeCompare(b, "fr", { ignorePunctuation: true })); // ['Adieu', 'café', 'Cliché', 'communiqué', 'Premier', 'réservé']
+
